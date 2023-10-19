@@ -29,7 +29,7 @@ jobs:
           pip install cython
           pip install opencv-python-headless
           pip install pyzbar
-          pip install pjnuis
+          pip install pyjnuis
           pip install qrcode
 
       # Used to cache dependencies with a timeout
