@@ -1,8 +1,7 @@
-
 name: CI
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -11,7 +10,29 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # used to cache dependencies with a timeout
+      # Install Python and pip
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8  # You can specify the desired Python version
+
+      # Install system dependencies for OpenCV
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgl1-mesa-glx
+
+      # Install Kivy, Cython, OpenCV, and Pyzbar
+      - name: Install dependencies
+        run: |
+          pip install kivy
+          pip install cython
+          pip install opencv-python-headless
+          pip install pyzbar
+          pip install pjnuis
+          pip install qrcode
+
+      # Used to cache dependencies with a timeout
       - name: Get Date
         id: get-date
         run: |
@@ -22,7 +43,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .buildozer_global
-          key: buildozer-global-${{ hashFiles('buildozer.spec') }} # Replace with your path
+          key: buildozer-global-${{ hashFiles('buildozer.spec') }}
 
       - uses: actions/cache@v2
         with:
