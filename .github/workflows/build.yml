@@ -31,6 +31,7 @@ jobs:
           pip install pyzbar
           pip install pyjnius
           pip install qrcode
+          pip install --upgrade pip
 
       # Used to cache dependencies with a timeout
       - name: Get Date
