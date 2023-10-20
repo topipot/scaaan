@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3>=3.7.6, kivy>=2.0.0, opencv-python-headless>=4.8.0, pyzbar>=0.1.8, qrcode>=6.0, numpy>=1.21.0, cython, pjnuis
+requirements = python3>=3.7.6, kivy>=2.0.0, opencv-python-headless>=4.8.0, pyzbar>=0.1.8, qrcode>=6.0, numpy>=1.21.0, cython~=0.29.36
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
