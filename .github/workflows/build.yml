@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8  # You can specify the desired Python version
+          python-version: 3.10  # You can specify the desired Python version
 
       # Install system dependencies for OpenCV
       - name: Install system dependencies
@@ -27,11 +27,12 @@ jobs:
         run: |
           pip install kivy
           pip install cython
-          pip install opencv-python-headless
+          pip install opencv-python
           pip install pyzbar
           pip install pyjnius
           pip install qrcode
           pip install --upgrade pip
+          pip install numpy
 
       # Used to cache dependencies with a timeout
       - name: Get Date
